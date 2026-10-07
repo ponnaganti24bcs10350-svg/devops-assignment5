@@ -6,26 +6,27 @@
 
 ---
 
-## 1. Git Homework Assignment
-- **Task 1:** `git commit -a -m` vs `git commit -m` testing & comparison.
-- **Task 2:** Git cherry-pick walkthrough from feature branch into `main`.
-- **Full Report & Screenshots:** [GIT_HOMEWORK_SUBMISSION.md](file:///Users/srividya/devops-assign/GIT_HOMEWORK_SUBMISSION.md)
+## 1. Kubernetes Fundamentals & Minikube Hands-on
+- **Cluster Status & Minikube Configuration:** `minikube status`, `kubectl cluster-info`, `kubectl get nodes`.
+- **Architecture Notes:** Control plane (`kube-apiserver`, `etcd`, `kube-scheduler`, `kube-controller-manager`) & Worker node (`kubelet`, `kube-proxy`, `container runtime`).
+- **Hands-on Tutorial:** Deploying `kubernetes-bootcamp`, exposing via NodePort Service, scaling to 3 replicas, and verifying live HTTP responses.
+- **Full Report & Screenshots:** [KUBERNETES_FUNDAMENTALS_SUBMISSION.md](file:///Users/srividya/devops-assign/KUBERNETES_FUNDAMENTALS_SUBMISSION.md)
 
 ---
 
-## 2. Docker Multi-Stage Build Homework
-- **Task 1 & 2:** Multi-stage Dockerfile build, running on port 8080, and `docker ps` verification.
-- **Task 3:** Multi-application deployment (Node.js, Python, Java).
-- **Full Report & Screenshot:** [DOCKER_MULTISTAGE_SUBMISSION.md](file:///Users/srividya/devops-assign/DOCKER_MULTISTAGE_SUBMISSION.md)
-
----
-
-## 3. Docker Networking & Volume Homework
+## 2. Docker Networking & Volume Homework
 - **Task 1:** Multi-tier container networking with frontend, backend (in 2 networks), and database.
 - **Task 2:** Host networking with Apache HTTP Server on port 80.
 - **Task 3:** Bind mount verification with live updates without container restart.
 - **Task 4:** Research and architecture of Docker Overlay networks.
 - **Full Report & Screenshots:** [DOCKER_NETWORKING_VOLUME_SUBMISSION.md](file:///Users/srividya/devops-assign/DOCKER_NETWORKING_VOLUME_SUBMISSION.md)
+
+---
+
+## 3. Docker Multi-Stage Build Homework
+- **Task 1 & 2:** Multi-stage Dockerfile build, running on port 8080, and `docker ps` verification.
+- **Task 3:** Multi-application deployment (Node.js, Python, Java).
+- **Full Report & Screenshot:** [DOCKER_MULTISTAGE_SUBMISSION.md](file:///Users/srividya/devops-assign/DOCKER_MULTISTAGE_SUBMISSION.md)
 
 ---
 
@@ -39,3 +40,10 @@ Simple Hello World web applications containerized with Docker:
 - **`nginx-app/`** - Nginx Web Server (Port 80)
 - **`multistage-app/`** - Multi-stage build Go application (Port 8080)
 - **Full Build & Run Guide:** [DOCKER_HOMEWORK_SUBMISSION.md](file:///Users/srividya/devops-assign/DOCKER_HOMEWORK_SUBMISSION.md)
+
+---
+
+## 5. Git Homework Assignment
+- **Task 1:** `git commit -a -m` vs `git commit -m` testing & comparison.
+- **Task 2:** Git cherry-pick walkthrough from feature branch into `main`.
+- **Full Report & Screenshots:** [GIT_HOMEWORK_SUBMISSION.md](file:///Users/srividya/devops-assign/GIT_HOMEWORK_SUBMISSION.md)
