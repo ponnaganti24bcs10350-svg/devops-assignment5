@@ -1,0 +1,25 @@
+# BROKEN: Command exits with non-zero exit code 1
+apiVersion: v1
+kind: Pod
+metadata:
+  name: broken-crashloop-pod
+  labels:
+    app: crashloop-demo
+spec:
+  containers:
+  - name: failing-container
+    image: alpine:latest
+    command: ["/bin/sh", "-c", "echo 'Fatal: Missing critical DB_URL environment variable!'; exit 1"]
+---
+# FIXED: Proper initialization and continuous process
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fixed-crashloop-pod
+  labels:
+    app: crashloop-demo
+spec:
+  containers:
+  - name: fixed-container
+    image: alpine:latest
+    command: ["/bin/sh", "-c", "echo 'Init successful: Connected to database'; sleep 3600"]

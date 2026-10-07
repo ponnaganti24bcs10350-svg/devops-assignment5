@@ -1,0 +1,23 @@
+# BROKEN: Image tag does not exist in registry
+apiVersion: v1
+kind: Pod
+metadata:
+  name: broken-imagepull-pod
+  labels:
+    app: imagepull-demo
+spec:
+  containers:
+  - name: app
+    image: nginx:nonexistent-tag-version-9999
+---
+# FIXED: Valid image tag
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fixed-imagepull-pod
+  labels:
+    app: imagepull-demo
+spec:
+  containers:
+  - name: app
+    image: nginx:alpine

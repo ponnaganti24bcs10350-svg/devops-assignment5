@@ -1,0 +1,44 @@
+# BROKEN MANIFEST FOR TROUBLESHOOTING MINI-PROJECT
+# Bug 1: ImagePullBackOff (invalid image tag)
+# Bug 2: CreateContainerConfigError (missing ConfigMap payment-config)
+# Bug 3: Service Endpoints <none> (Selector and Port mismatch)
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service-deployment
+  labels:
+    app: payment-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: payment-service
+  template:
+    metadata:
+      labels:
+        app: payment-service
+    spec:
+      containers:
+      - name: payment-api
+        image: nginx:v999-broken-tag # BUG 1: Image does not exist
+        ports:
+        - containerPort: 80
+        env:
+        - name: PAYMENT_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: missing-payment-config # BUG 2: ConfigMap does not exist
+              key: mode
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+spec:
+  type: ClusterIP
+  selector:
+    app: payment-wrong-selector # BUG 3: Selector mismatch
+  ports:
+  - port: 80
+    targetPort: 8443 # BUG 4: TargetPort mismatch (container listens on 80)

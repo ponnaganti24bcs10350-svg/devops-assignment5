@@ -1,0 +1,57 @@
+# FIXED MANIFEST FOR TROUBLESHOOTING MINI-PROJECT
+# Fix 1: ConfigMap created with valid mode key
+# Fix 2: Valid container image (nginx:alpine with custom HTML response)
+# Fix 3: Matching Service selector (app: payment-service) and targetPort (80)
+
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payment-config
+data:
+  mode: "production-live"
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service-deployment
+  labels:
+    app: payment-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: payment-service
+  template:
+    metadata:
+      labels:
+        app: payment-service
+    spec:
+      containers:
+      - name: payment-api
+        image: nginx:alpine
+        command:
+        - /bin/sh
+        - -c
+        - |
+          echo '<h1>💳 Payment Microservice Gateway: Healthy & Processing (HTTP 200)</h1>' > /usr/share/nginx/html/index.html
+          nginx -g 'daemon off;'
+        ports:
+        - containerPort: 80
+        env:
+        - name: PAYMENT_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: payment-config
+              key: mode
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: payment-service
+spec:
+  type: ClusterIP
+  selector:
+    app: payment-service
+  ports:
+  - port: 80
+    targetPort: 80

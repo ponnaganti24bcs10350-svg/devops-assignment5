@@ -1,0 +1,29 @@
+# BROKEN: Requests 100 CPU cores (cannot be scheduled on any node)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: broken-pending-pod
+  labels:
+    app: pending-demo
+spec:
+  containers:
+  - name: app
+    image: nginx:alpine
+    resources:
+      requests:
+        cpu: "100" # Impossible resource request
+---
+# FIXED: Realistic CPU request
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fixed-pending-pod
+  labels:
+    app: pending-demo
+spec:
+  containers:
+  - name: app
+    image: nginx:alpine
+    resources:
+      requests:
+        cpu: "100m"
