@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-configmap-demo
+  labels:
+    app: configmap-demo
+spec:
+  containers:
+  - name: app-container
+    image: alpine:latest
+    command: ["/bin/sh", "-c", "echo '=== ConfigMap Values Verified ==='; env | grep -E 'APP_ENV|DATABASE|MAX_CONNECTIONS'; echo '=== Mounted Properties File ==='; cat /etc/config/app.properties; sleep 3600"]
+    env:
+    - name: APP_ENVIRONMENT
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: APP_ENV
+    - name: DB_HOST
+      valueFrom:
+        configMapKeyRef:
+          name: app-config
+          key: DATABASE_HOST
+    envFrom:
+    - configMapRef:
+        name: app-config
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+      readOnly: true
+  volumes:
+  - name: config-volume
+    configMap:
+      name: app-config
