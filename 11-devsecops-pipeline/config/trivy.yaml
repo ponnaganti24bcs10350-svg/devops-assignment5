@@ -1,0 +1,16 @@
+# Trivy Container & Filesystem Vulnerability Scanner Configuration
+format: "table"
+exit-code: 0
+ignore-unfixed: true
+severity:
+  - "HIGH"
+  - "CRITICAL"
+scan:
+  security-checks:
+    - "vuln"
+    - "config"
+    - "secret"
+vulnerability:
+  type:
+    - "os"
+    - "library"

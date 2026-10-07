@@ -1,0 +1,22 @@
+rules:
+  - id: hardcoded-secret-detection
+    languages: [javascript, typescript]
+    message: "Hardcoded secret or credential detected in source code"
+    severity: ERROR
+    patterns:
+      - pattern-regex: '(?i)(password|secret|api_key)\s*=\s*["\x27][A-Za-z0-9_\-]{8,}["\x27]'
+
+  - id: insecure-eval-usage
+    languages: [javascript, typescript]
+    message: "Usage of eval() is extremely dangerous and can lead to remote code execution (RCE)"
+    severity: ERROR
+    pattern: eval(...)
+
+  - id: insecure-crypto-algorithm
+    languages: [javascript, typescript]
+    message: "Weak cryptographic algorithm (MD5/SHA1) detected. Use SHA-256 or SHA-512 instead."
+    severity: WARNING
+    patterns:
+      - pattern-either:
+          - pattern: crypto.createHash("md5")
+          - pattern: crypto.createHash("sha1")

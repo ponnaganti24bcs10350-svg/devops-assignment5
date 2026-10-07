@@ -1,0 +1,25 @@
+title = "Gitleaks DevSecOps Custom Configuration"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Global allowlist for non-sensitive test artifacts"
+paths = [
+  '''tests/''',
+  '''node_modules/''',
+  '''screenshots/'''
+]
+
+[[rules]]
+id = "generic-api-key"
+description = "Generic API Key & Secret Token Detection"
+regex = '''(?i)(?:key|api|token|secret|password|auth)[0-9a-z\-_\t .]{0,20}['\"][0-9a-zA-Z]{16,45}['\"]'''
+entropy = 3.5
+keywords = [
+  "key",
+  "api",
+  "token",
+  "secret",
+  "password"
+]
