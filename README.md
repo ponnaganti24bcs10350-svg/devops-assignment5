@@ -20,7 +20,16 @@
 
 ---
 
-## 3. Docker Hello World Applications
+## 3. Docker Networking & Volume Homework
+- **Task 1:** Multi-tier container networking with frontend, backend (in 2 networks), and database.
+- **Task 2:** Host networking with Apache HTTP Server on port 80.
+- **Task 3:** Bind mount verification with live updates without container restart.
+- **Task 4:** Research and architecture of Docker Overlay networks.
+- **Full Report & Screenshots:** [DOCKER_NETWORKING_VOLUME_SUBMISSION.md](file:///Users/srividya/devops-assign/DOCKER_NETWORKING_VOLUME_SUBMISSION.md)
+
+---
+
+## 4. Docker Hello World Applications
 Simple Hello World web applications containerized with Docker:
 - **`nodejs-app/`** - Node.js web application (Port 3000)
 - **`python-app/`** - Python HTTP web application (Port 5000)
