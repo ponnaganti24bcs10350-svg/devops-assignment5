@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: devops-platform-project
+  namespace: argocd
+spec:
+  description: "DevOps Production GitOps Application Project"
+  sourceRepos:
+    - 'https://github.com/ponnaganti24bcs10350-svg/devops-assignment5.git'
+  destinations:
+    - namespace: default
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: ''
+      kind: Namespace
+  namespaceResourceWhitelist:
+    - group: 'apps'
+      kind: 'Deployment'
+    - group: ''
+      kind: 'Service'
+    - group: ''
+      kind: 'ConfigMap'
+    - group: ''
+      kind: 'Secret'
