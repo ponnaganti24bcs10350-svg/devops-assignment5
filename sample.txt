@@ -1,1 +1,2 @@
 Initial content for sample file
+Line 2: Modifying tracked file for git commit -m test
