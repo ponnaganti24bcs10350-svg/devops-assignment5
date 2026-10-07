@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1791398838201" clover="3.2.0">
+  <project timestamp="1791398838201" name="All files">
+    <metrics statements="38" coveredstatements="29" conditionals="17" coveredconditionals="12" methods="8" coveredmethods="7" elements="63" coveredelements="48" complexity="0" loc="38" ncloc="38" packages="1" files="2" classes="2"/>
+    <file name="app.js" path="/Users/srividya/devops-assign/10-final-cicd-pipeline/src/app.js">
+      <metrics statements="31" coveredstatements="22" conditionals="15" coveredconditionals="10" methods="4" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="5" count="1" type="stmt"/>
+      <line num="7" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="28" count="1" type="stmt"/>
+      <line num="29" count="2" type="stmt"/>
+      <line num="31" count="2" type="cond" truecount="3" falsecount="1"/>
+      <line num="32" count="0" type="stmt"/>
+      <line num="35" count="2" type="stmt"/>
+      <line num="37" count="2" type="cond" truecount="2" falsecount="3"/>
+      <line num="39" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+      <line num="45" count="0" type="stmt"/>
+      <line num="46" count="0" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="49" count="0" type="stmt"/>
+      <line num="51" count="0" type="stmt"/>
+      <line num="53" count="1" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="59" count="1" type="cond" truecount="1" falsecount="1"/>
+      <line num="60" count="0" type="stmt"/>
+      <line num="61" count="0" type="stmt"/>
+      <line num="65" count="1" type="stmt"/>
+    </file>
+    <file name="calculator.js" path="/Users/srividya/devops-assign/10-final-cicd-pipeline/src/calculator.js">
+      <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <line num="2" count="3" type="stmt"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="14" count="3" type="cond" truecount="2" falsecount="0"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
