@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blue-app
+  labels:
+    app: web-app
+    version: blue
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: web-app
+        version: blue
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        command: ["/bin/sh", "-c", "echo '<h1>Application Version: BLUE (v1.0)</h1>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"]
+        ports:
+        - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: green-app
+  labels:
+    app: web-app
+    version: green
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web-app
+      version: green
+  template:
+    metadata:
+      labels:
+        app: web-app
+        version: green
+    spec:
+      containers:
+      - name: web
+        image: nginx:alpine
+        command: ["/bin/sh", "-c", "echo '<h1>Application Version: GREEN (v2.0)</h1>' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'"]
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: blue-green-service
+spec:
+  type: ClusterIP
+  selector:
+    app: web-app
+    version: blue
+  ports:
+  - port: 80
+    targetPort: 80

@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lifecycle-crashloop-pod
+  labels:
+    lifecycle: crashloop
+spec:
+  containers:
+  - name: crash-app
+    image: alpine:latest
+    command: ["/bin/sh", "-c", "echo 'Encountered critical error!' && exit 1"]

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: lifecycle-completed-pod
+  labels:
+    lifecycle: completed
+spec:
+  restartPolicy: Never
+  containers:
+  - name: batch-job
+    image: alpine:latest
+    command: ["/bin/sh", "-c", "echo 'Performing batch calculation... Done!' && exit 0"]
