@@ -6,7 +6,15 @@
 
 ---
 
-## 1. Kubernetes Ingress, ConfigMaps & Secrets (Session 12)
+## 1. Kubernetes Storage, HPA & Probes (Session 13)
+- **Task 1: Kubernetes Volumes Guide:** Deep dive into `emptyDir`, `hostPath`, `PersistentVolume`, `PersistentVolumeClaim`, `StorageClass`, and Dynamic Provisioning in [`01-kubernetes-volumes/README.md`](file:///Users/srividya/devops-assign/01-kubernetes-volumes/README.md).
+- **Task 2: HPA Hands-on:** Deployment with resource requests/limits, live CPU metrics generation, and autoscaling from 1 to 4+ replicas in [`02-hpa/`](file:///Users/srividya/devops-assign/02-hpa/).
+- **Task 3: Production Mini-Project:** Multi-tier architecture featuring MySQL on dynamic PVC storage, web application with triple-tier health probes (**Startup**, **Readiness**, and **Liveness**), and HPA in [`mini-project/`](file:///Users/srividya/devops-assign/mini-project/).
+- **Full Report & Screenshots:** [K8S_STORAGE_HPA_PROBES_SUBMISSION.md](file:///Users/srividya/devops-assign/K8S_STORAGE_HPA_PROBES_SUBMISSION.md)
+
+---
+
+## 2. Kubernetes Ingress, ConfigMaps & Secrets (Session 12)
 - **Task 1: ConfigMap Demo:** Decoupled key-value pairs & properties file injected via environment variables and mounted volume.
 - **Task 2: Secret Demo:** Secure credentials injection & security analysis on why Secrets must not be committed to Git.
 - **Task 3: Ingress Demo:** NGINX Ingress Controller setup with path-based routing (`/apple` and `/banana`).
@@ -16,7 +24,7 @@
 
 ---
 
-## 2. Kubernetes Networking & Services (Session 11)
+## 3. Kubernetes Networking & Services (Session 11)
 - **Task 1: All 5 Service Types:** ClusterIP, NodePort, LoadBalancer, ExternalName, and Headless services.
 - **Task 2: Workload & Object Comparisons:** Deployment vs ReplicaSet, Deployment vs DaemonSet vs StatefulSet, ReplicaSet vs Service.
 - **Task 3: FQDN Guide:** In-depth guide in [`fqdn/README.md`](file:///Users/srividya/devops-assign/fqdn/README.md).
@@ -26,7 +34,7 @@
 
 ---
 
-## 3. Kubernetes Deployment Strategies & Pod Lifecycle (Session 10)
+## 4. Kubernetes Deployment Strategies & Pod Lifecycle (Session 10)
 - **4 Deployment Strategies:** Rolling Update, Blue-Green, Canary, and Recreate strategies with YAML manifests.
 - **Pod Lifecycle Exploration:** Running (with liveness probes), Completed (Job/One-shot), and CrashLoopBackOff states.
 - **Manifests Folder:** [`k8s-manifests/`](file:///Users/srividya/devops-assign/k8s-manifests/)
@@ -34,7 +42,7 @@
 
 ---
 
-## 4. Kubernetes Fundamentals & Minikube Hands-on
+## 5. Kubernetes Fundamentals & Minikube Hands-on
 - **Cluster Status & Minikube Configuration:** `minikube status`, `kubectl cluster-info`, `kubectl get nodes`.
 - **Architecture Notes:** Control plane (`kube-apiserver`, `etcd`, `kube-scheduler`, `kube-controller-manager`) & Worker node (`kubelet`, `kube-proxy`, `container runtime`).
 - **Hands-on Tutorial:** Deploying `kubernetes-bootcamp`, exposing via NodePort Service, scaling to 3 replicas, and verifying live HTTP responses.
@@ -42,7 +50,7 @@
 
 ---
 
-## 5. Docker Networking & Volume Homework
+## 6. Docker Networking & Volume Homework
 - **Task 1:** Multi-tier container networking with frontend, backend (in 2 networks), and database.
 - **Task 2:** Host networking with Apache HTTP Server on port 80.
 - **Task 3:** Bind mount verification with live updates without container restart.
@@ -51,14 +59,14 @@
 
 ---
 
-## 6. Docker Multi-Stage Build Homework
+## 7. Docker Multi-Stage Build Homework
 - **Task 1 & 2:** Multi-stage Dockerfile build, running on port 8080, and `docker ps` verification.
 - **Task 3:** Multi-application deployment (Node.js, Python, Java).
 - **Full Report & Screenshot:** [DOCKER_MULTISTAGE_SUBMISSION.md](file:///Users/srividya/devops-assign/DOCKER_MULTISTAGE_SUBMISSION.md)
 
 ---
 
-## 7. Docker Hello World Applications
+## 8. Docker Hello World Applications
 Simple Hello World web applications containerized with Docker:
 - **`nodejs-app/`** - Node.js web application (Port 3000)
 - **`python-app/`** - Python HTTP web application (Port 5000)
@@ -71,7 +79,7 @@ Simple Hello World web applications containerized with Docker:
 
 ---
 
-## 8. Git Homework Assignment
+## 9. Git Homework Assignment
 - **Task 1:** `git commit -a -m` vs `git commit -m` testing & comparison.
 - **Task 2:** Git cherry-pick walkthrough from feature branch into `main`.
 - **Full Report & Screenshots:** [GIT_HOMEWORK_SUBMISSION.md](file:///Users/srividya/devops-assign/GIT_HOMEWORK_SUBMISSION.md)
