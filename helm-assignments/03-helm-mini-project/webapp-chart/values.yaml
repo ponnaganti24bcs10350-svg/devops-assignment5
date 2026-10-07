@@ -1,0 +1,64 @@
+# Default values for webapp-chart.
+replicaCount: 2
+
+image:
+  repository: nginx
+  pullPolicy: IfNotPresent
+  tag: "alpine"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+appConfig:
+  environment: "production"
+  welcomeMessage: "Welcome to Production Helm Managed Microservice!"
+  logLevel: "INFO"
+
+appSecrets:
+  apiKey: "helm-live-key-99887766"
+  jwtSecret: "helm-ultra-secure-secret-token"
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 80
+  nodePort: 32090
+
+probes:
+  startup:
+    enabled: true
+    path: /
+    initialDelaySeconds: 2
+    periodSeconds: 3
+    failureThreshold: 10
+  liveness:
+    enabled: true
+    path: /
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    failureThreshold: 3
+  readiness:
+    enabled: true
+    path: /
+    initialDelaySeconds: 2
+    periodSeconds: 5
+    failureThreshold: 3
+
+resources:
+  limits:
+    cpu: 250m
+    memory: 128Mi
+  requests:
+    cpu: 50m
+    memory: 64Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 50
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

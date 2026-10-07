@@ -1,0 +1,9 @@
+apiVersion: v2
+name: webapp
+description: A Production-Grade Custom Helm Chart for Scalable Cloud Native Applications
+type: application
+version: 1.0.0
+appVersion: "2.4.5"
+maintainers:
+  - name: Srividya Ponnaganti
+    email: student@example.com
