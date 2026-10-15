@@ -1,4 +1,4 @@
-# DevOps Engineering Repository
+# DevOps Engineering Coursework & Homework Submissions
 
 **Student Name:** Srividya Ponnaganti  
 **Enrollment Number:** 24BCS10350  
@@ -6,60 +6,70 @@
 
 ---
 
-## Repository Session Structure
+## Session Master Directory Index (Session 06 - Session 20)
 
-This repository is structured session-by-session directly at the root, containing all homework assignments, application source codes, Dockerfiles, Kubernetes manifests, Helm charts, Terraform configurations, and CI/CD pipelines.
+Every session from Session 6 onwards is organized in its own **separate, dedicated session folder** containing all source code, Dockerfiles, Kubernetes manifests, configuration files, terminal commands, outputs, and screenshot verifications:
 
-| Session Folder | Topic & Modules Covered | Key Deliverables & Practical Labs |
-| :--- | :--- | :--- |
-| [**`session5-git-github/`**](session5-git-github/) | **Git Fundamentals & Workflow** | `git commit -a -m` vs `git commit -m` testing, branch cherry-pick walkthrough & verification. |
-| [**`session6-7-docker/`**](session6-7-docker/) | **Docker Apps & Multi-Stage Builds** | 6 Hello World apps (Node.js, Python, Java, Apache, React, Nginx) + Multi-stage Go build on port 8080. |
-| [**`session8-docker-networking-volume/`**](session8-docker-networking-volume/) | **Docker Networking & Volumes** | Multi-tier bridge networks, dual-homed backend, host networking, live bind mounts, overlay network research. |
-| [**`session9-k8s/`**](session9-k8s/) | **Kubernetes Fundamentals** | Minikube cluster setup, Control plane vs worker node architecture, deployment scaling, NodePort verification. |
-| [**`session10-k8s-core-objects/`**](session10-k8s-core-objects/) | **Pods, ReplicaSets & Deployments** | 4 deployment strategies (Rolling, Blue-Green, Canary, Recreate), Pod lifecycle phases. |
-| [**`session-11-kubernetes-services/`**](session-11-kubernetes-services/) | **Kubernetes Networking & Services** | 5 Service types (ClusterIP, NodePort, LoadBalancer, ExternalName, Headless), Object comparisons, FQDN & CoreDNS. |
-| [**`session-12-ingress-configmaps-secrets/`**](session-12-ingress-configmaps-secrets/) | **Ingress, ConfigMaps & Secrets** | ConfigMap & Secret injection, Nginx Ingress path routing (`/apple`, `/banana`), Ingress vs Controller, RCA. |
-| [**`session-13-storage-hpa-probes/`**](session-13-storage-hpa-probes/) | **Storage, HPA & Probes** | Volume types (emptyDir, hostPath, PV, PVC, StorageClass), CPU-based HPA autoscaling, 3-tier health probes. |
-| [**`session-14-kubernetes-troubleshooting/`**](session-14-kubernetes-troubleshooting/) | **Kubernetes Troubleshooting** | Diagnostic commands (`describe`, `logs -p`, `events`), RCA for CrashLoopBackOff, ImagePullBackOff, Pending. |
-| [**`session-15-helm/`**](session-15-helm/) | **Helm Package Management** | CLI lifecycle (`create`, `install`, `upgrade`, `history`, `rollback`), multi-revision rollback, custom chart. |
-| [**`session-16-github-actions/`**](session-16-github-actions/) | **CI/CD & GitHub Actions** | Multi-job workflow with Jest testing, multi-stage container build, zero-downtime Kubernetes deployment. |
-| [**`session-17-devsecops/`**](session-17-devsecops/) | **Complete CI/CD & DevSecOps** | Shift-Left pipeline: Semgrep SAST, Trivy SCA, Gitleaks Secret Scan, Trivy Container Scan, Security Gates. |
-| [**`session18-terraform-iac/`**](session18-terraform-iac/) | **Terraform & IaC (AWS)** | Terraform S3 full lifecycle, 5 AWS deep dives (IAM, EC2, S3, VPC, DynamoDB & RDS). |
-| [**`session19-cloud-terraform/`**](session19-cloud-terraform/) | **Cloud & Terraform in Action** | Complete AWS production stack: VPC, Subnet, Route Table, IGW, Security Group, EC2 Apache server, S3 bucket. |
-| [**`session20-monitoring-observability-gitops/`**](session20-monitoring-observability-gitops/) | **Monitoring, Observability & GitOps** | Live Prometheus metrics & Alertmanager, 3 pillars of observability (Metrics, Logs, Traces), ArgoCD GitOps. |
-| [**`session21-devops-capstone/`**](session21-devops-capstone/) | **Final Production Capstone Project** | End-to-end GitOps SRE Operations & Incident Platform (CloudPulse) with DevSecOps, Helm, HPA, Prometheus. |
+| Session | Session Directory | Topic & Key Deliverables | Status |
+| :--- | :--- | :--- | :--- |
+| **Session 06** | [**`session6-docker-hello-world/`**](session6-docker-hello-world/) | 6 Hello World apps (Node.js, Python, Java, Apache, React, Nginx) on separate ports. | Verified |
+| **Session 07** | [**`session7-docker-multistage-build/`**](session7-docker-multistage-build/) | Multi-stage build Go app (port 8080) + 3 app deployment (Node.js, Python, Java). | Verified |
+| **Session 08** | [**`session8-docker-networking-volume/`**](session8-docker-networking-volume/) | Multi-tier bridge networks, dual-homed backend, host networking, live bind mounts, overlay network research. | Verified |
+| **Session 09** | [**`session9-k8s/`**](session9-k8s/) | Minikube cluster setup, Control plane vs worker node architecture, deployment scaling, NodePort verification. | Verified |
+| **Session 10** | [**`session10-k8s-core-objects/`**](session10-k8s-core-objects/) | 4 deployment strategies (Rolling Update, Blue-Green, Canary, Recreate), Pod lifecycle phases. | Verified |
+| **Session 11** | [**`session-11-kubernetes-services/`**](session-11-kubernetes-services/) | 5 Service types (ClusterIP, NodePort, LoadBalancer, ExternalName, Headless), Object comparisons, FQDN & CoreDNS. | Verified |
+| **Session 12** | [**`session-12-ingress-configmaps-secrets/`**](session-12-ingress-configmaps-secrets/) | ConfigMap & Secret injection, Nginx Ingress path routing (`/apple`, `/banana`), Ingress vs Controller, RCA. | Verified |
+| **Session 13** | [**`session-13-storage-hpa-probes/`**](session-13-storage-hpa-probes/) | Volume types (emptyDir, hostPath, PV, PVC, StorageClass), CPU-based HPA autoscaling, 3-tier health probes. | Verified |
+| **Session 14** | [**`session-14-kubernetes-troubleshooting/`**](session-14-kubernetes-troubleshooting/) | Diagnostic commands (`describe`, `logs -p`, `events`), RCA for CrashLoopBackOff, ImagePullBackOff, Pending. | Verified |
+| **Session 15** | [**`session-15-helm/`**](session-15-helm/) | CLI lifecycle (`create`, `install`, `upgrade`, `history`, `rollback`), multi-revision rollback, custom chart. | Verified |
+| **Session 16** | [**`session-16-github-actions/`**](session-16-github-actions/) | Multi-job workflow with Jest testing, multi-stage container build, zero-downtime Kubernetes deployment. | Verified |
+| **Session 17** | [**`session-17-devsecops/`**](session-17-devsecops/) | Shift-Left pipeline: Semgrep SAST, Trivy SCA, Gitleaks Secret Scan, Trivy Container Scan, Security Gates. | Verified |
+| **Session 18** | [**`session18-terraform-iac/`**](session18-terraform-iac/) | Terraform S3 full lifecycle, 5 AWS deep dives (IAM, EC2, S3, VPC, DynamoDB & RDS). | Verified |
+| **Session 19** | [**`session19-cloud-terraform/`**](session19-cloud-terraform/) | Complete AWS production stack: VPC, Subnet, Route Table, IGW, Security Group, EC2 Apache server, S3 bucket. | Verified |
+| **Session 20** | [**`session20-monitoring-observability-gitops/`**](session20-monitoring-observability-gitops/) | Live Prometheus metrics & Alertmanager, 3 pillars of observability (Metrics, Logs, Traces), ArgoCD GitOps. | Verified |
+| **Session 21** | [**`session21-devops-capstone/`**](session21-devops-capstone/) | End-to-end GitOps SRE Operations & Incident Platform (CloudPulse) with DevSecOps, Helm, HPA, Prometheus. | Verified |
+| **Foundational** | [**`session5-git-github/`**](session5-git-github/) | `git commit -a -m` vs `git commit -m` testing, branch cherry-pick walkthrough & verification. | Verified |
 
 ---
 
-## Detailed Session Workflows & Deliverables
+## Detailed Task Workflows & Deliverables
 
-### [`session6-7-docker/`](session6-7-docker/) - Docker Applications & Multi-Stage Builds
-- **Part 1 (Session 6):** 6 Containerized web applications:
+### [Session 06: Docker Hello World Applications](session6-docker-hello-world/)
+- **Directory:** [`session6-docker-hello-world/`](session6-docker-hello-world/)
+- **6 Applications Deployed:**
   - `nodejs-app/`: Node.js HTTP server (Port 3000)
   - `python-app/`: Python 3.11 HTTP server (Port 5000)
   - `java-app/`: Java JDK 17 HTTP server (Port 8080)
   - `Apache-app/`: Apache HTTP Server `httpd:alpine` (Port 80)
   - `React-app/`: React 18 component served with Nginx (Port 80)
   - `nginx-app/`: Nginx Web Server `nginx:alpine` (Port 80)
-- **Part 2 (Session 7):** Multi-stage build Go application in `multistage-app/`:
-  - Builder stage (`golang:1.21-alpine`) compiles binary; minimal runner stage (`alpine:latest`) serves on port 8080.
-  - Verification: Confirmed output `Hello World from Docker multi-stage build` and captured `docker ps`.
-- **Evidence:** `screenshots/05_multistage_docker_run.png`
-- **Documentation:** [README in session6-7-docker](session6-7-docker/README.md)
+- **Documentation:** [README in session6-docker-hello-world](session6-docker-hello-world/README.md)
 
 ---
 
-### [`session8-docker-networking-volume/`](session8-docker-networking-volume/) - Docker Networking & Volumes
+### [Session 07: Docker Multi-Stage Build Homework](session7-docker-multistage-build/)
+- **Directory:** [`session7-docker-multistage-build/`](session7-docker-multistage-build/)
+- **Task 1: Run Multi-Stage Dockerfile:** Multi-stage build Go application in `multistage-app/` (`golang:1.21-alpine` builder & `alpine:latest` production) running on port 8080.
+- **Task 2: Documentation:** Confirmed output `Hello World from Docker multi-stage build`, verified `docker ps` on port 8080.
+- **Task 3: Docker Application Deployment:** Multi-application deployment for Node.js, Python, and Java.
+- **Evidence:** `screenshots/05_multistage_docker_run.png`
+- **Documentation:** [README in session7-docker-multistage-build](session7-docker-multistage-build/README.md)
+
+---
+
+### [Session 08: Docker Networking & Volume Homework Tasks](session8-docker-networking-volume/)
+- **Directory:** [`session8-docker-networking-volume/`](session8-docker-networking-volume/)
 - **Task 1: Multi-Tier Isolation:** 3 bridge networks (`frontend-net`, `backend-net`, `db-net`) with frontend, backend (dual-homed), and database containers.
 - **Task 2: Host Network:** Apache HTTP server running with `--network host` on port 80.
-- **Task 3: Live Bind Mount:** Local directory `bindmount-html/` mounted to Nginx container verifying live HTML updates without restart.
+- **Task 3: Live Bind Mount:** Local directory `bindmount-html/` mounted to Nginx container verifying live HTML updates without container restart.
 - **Task 4: Overlay Network Architecture:** Documented VXLAN encapsulation and swarm multi-host routing.
 - **Evidence:** `screenshots/06_task1_container_networking.png`, `screenshots/07_task2_host_network.png`, `screenshots/08_task3_bind_mount.png`
 - **Documentation:** [README in session8-docker-networking-volume](session8-docker-networking-volume/README.md)
 
 ---
 
-### [`session9-k8s/`](session9-k8s/) - Kubernetes Fundamentals & Minikube Hands-on
+### [Session 09: Kubernetes Fundamentals & Minikube Hands-on](session9-k8s/)
+- **Directory:** [`session9-k8s/`](session9-k8s/)
 - **Minikube Setup:** Configured local cluster; verified status with `minikube status`, `kubectl cluster-info`, and `kubectl get nodes`.
 - **Architecture Notes:** Control Plane (`kube-apiserver`, `etcd`, `kube-scheduler`, `kube-controller-manager`) & Worker Node (`kubelet`, `kube-proxy`, `container runtime`).
 - **Hands-on Deployment:** Deployed `kubernetes-bootcamp`, exposed via NodePort service (port 31835), scaled to 3 replicas, and verified live HTTP responses.
@@ -68,7 +78,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session10-k8s-core-objects/`](session10-k8s-core-objects/) - Pods, ReplicaSets & Deployments
+### [Session 10: Kubernetes Pods, ReplicaSets & Deployments](session10-k8s-core-objects/)
+- **Directory:** [`session10-k8s-core-objects/`](session10-k8s-core-objects/)
 - **Manifests Directory:** `k8s-manifests/`
 - **4 Deployment Strategies:**
   - **Rolling Update:** Zero-downtime progressive replacement (`maxSurge: 1`, `maxUnavailable: 0`).
@@ -81,7 +92,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-11-kubernetes-services/`](session-11-kubernetes-services/) - Kubernetes Networking & Services
+### [Session 11: Kubernetes Networking & Services](session-11-kubernetes-services/)
+- **Directory:** [`session-11-kubernetes-services/`](session-11-kubernetes-services/)
 - **Manifests Directory:** `k8s-services/`
 - **5 Service Types:** ClusterIP, NodePort, LoadBalancer, ExternalName, and Headless services.
 - **Object Comparisons:** Deployment vs ReplicaSet, Deployment vs DaemonSet vs StatefulSet, ReplicaSet vs Service.
@@ -91,7 +103,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-12-ingress-configmaps-secrets/`](session-12-ingress-configmaps-secrets/) - Ingress, ConfigMaps & Secrets
+### [Session 12: Kubernetes Ingress, ConfigMaps & Secrets](session-12-ingress-configmaps-secrets/)
+- **Directory:** [`session-12-ingress-configmaps-secrets/`](session-12-ingress-configmaps-secrets/)
 - **Manifests Directories:** `k8s-configmaps-secrets/`, `k8s-ingress/`
 - **ConfigMap & Secret:** Decoupled configurations and sensitive credentials injected via env vars and mounted volumes.
 - **Path Routing:** NGINX Ingress Controller routing `/apple` and `/banana` traffic.
@@ -101,7 +114,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-13-storage-hpa-probes/`](session-13-storage-hpa-probes/) - Storage, HPA & Probes
+### [Session 13: Kubernetes Storage, HPA & Probes](session-13-storage-hpa-probes/)
+- **Directory:** [`session-13-storage-hpa-probes/`](session-13-storage-hpa-probes/)
 - **Directories:** `01-kubernetes-volumes/`, `02-hpa/`, `mini-project/`
 - **Volumes Guide:** `emptyDir`, `hostPath`, `PersistentVolume`, `PersistentVolumeClaim`, `StorageClass`, and Dynamic Provisioning.
 - **HPA Autoscaling:** Live CPU metrics load generation autoscaling replicas from 1 to 4+.
@@ -111,7 +125,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-14-kubernetes-troubleshooting/`](session-14-kubernetes-troubleshooting/) - Kubernetes Troubleshooting
+### [Session 14: Kubernetes Troubleshooting](session-14-kubernetes-troubleshooting/)
+- **Directory:** [`session-14-kubernetes-troubleshooting/`](session-14-kubernetes-troubleshooting/)
 - **Modules Directory:** `troubleshooting-modules/`
 - **Diagnostic Commands:** `get -o wide`, `describe`, `logs -p`, `exec`, `events`, `explain`, `top`.
 - **Common Issues Playbook:** Root Cause Analysis (RCA) and resolution for CrashLoopBackOff, ImagePullBackOff, Pending, DNS failure, and broken Endpoints.
@@ -121,7 +136,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-15-helm/`](session-15-helm/) - Helm Package Management
+### [Session 15: Helm Package Management](session-15-helm/)
+- **Directory:** [`session-15-helm/`](session-15-helm/)
 - **Modules Directory:** `helm-assignments/`
 - **Commands & Lifecycle:** Hands-on practice with `create`, `install`, `upgrade`, `history`, `rollback`, `repo`, `search`.
 - **Multi-Revision Rollback:** Upgrade v1 -> v2 -> rollback to v1 verification.
@@ -131,7 +147,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-16-github-actions/`](session-16-github-actions/) - CI/CD & GitHub Actions
+### [Session 16: CI/CD & GitHub Actions](session-16-github-actions/)
+- **Directory:** [`session-16-github-actions/`](session-16-github-actions/)
 - **Pipeline Directory:** `10-final-cicd-pipeline/`
 - **Workflow Manifest:** [`.github/workflows/ci-cd.yml`](.github/workflows/ci-cd.yml)
 - **Features:** Automated Jest testing (100% pass), multi-stage Docker packaging (49.8MB), artifact archival, and zero-downtime rolling update deployment to Kubernetes.
@@ -140,7 +157,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session-17-devsecops/`](session-17-devsecops/) - Complete CI/CD & DevSecOps
+### [Session 17: Complete CI/CD & DevSecOps](session-17-devsecops/)
+- **Directory:** [`session-17-devsecops/`](session-17-devsecops/)
 - **Pipeline Directory:** `11-devsecops-pipeline/`
 - **Workflow Manifest:** [`.github/workflows/devsecops-pipeline.yml`](.github/workflows/devsecops-pipeline.yml)
 - **Shift-Left Security:**
@@ -154,7 +172,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session18-terraform-iac/`](session18-terraform-iac/) - Terraform & IaC (AWS)
+### [Session 18: Terraform & Infrastructure as Code](session18-terraform-iac/)
+- **Directory:** [`session18-terraform-iac/`](session18-terraform-iac/)
 - **Directories:** `terraform-s3-demo/`, `aws-services/`
 - **Terraform S3 Demo:** Full lifecycle execution (`init`, `fmt`, `validate`, `plan`, `apply`, `show`, `output`, `destroy`) with SSE-S3 AES-256 encryption, versioning, and public access blocks.
 - **5 AWS Architecture Guides:** IAM Governance, EC2 Compute, S3 Storage, VPC Networking, and DynamoDB & RDS Database services.
@@ -163,7 +182,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session19-cloud-terraform/`](session19-cloud-terraform/) - Cloud & Terraform in Action
+### [Session 19: Cloud & Terraform in Action](session19-cloud-terraform/)
+- **Directory:** [`session19-cloud-terraform/`](session19-cloud-terraform/)
 - **Project Directory:** `terraform-cloud-infra/`
 - **Full-Stack AWS Infrastructure:** Custom VPC (`10.0.0.0/16`), Public Subnet (`10.0.1.0/24`), Internet Gateway, Route Table, Security Group, IAM Instance Profile, EC2 instance with user-data Apache server, and S3 bucket.
 - **Evidence:** `screenshots/47_cloud_terraform_init_plan.png` through `50_cloud_terraform_destroy.png`
@@ -171,7 +191,8 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session20-monitoring-observability-gitops/`](session20-monitoring-observability-gitops/) - Monitoring, Observability & GitOps
+### [Session 20: Monitoring, Observability & GitOps](session20-monitoring-observability-gitops/)
+- **Directory:** [`session20-monitoring-observability-gitops/`](session20-monitoring-observability-gitops/)
 - **Directories:** `01-monitoring/`, `02-observability/`, `03-gitops/`
 - **Monitoring:** Live Prometheus `/metrics` endpoint, health probes, CPU/Memory telemetry, JSON logs, Alertmanager rules.
 - **Observability:** In-depth guide on the Three Pillars: Metrics, Structured Logs, and Distributed Tracing (OpenTelemetry / Jaeger).
@@ -181,16 +202,18 @@ This repository is structured session-by-session directly at the root, containin
 
 ---
 
-### [`session21-devops-capstone/`](session21-devops-capstone/) - Final Production Capstone Project
+### [Session 21: Final DevOps Capstone Project](session21-devops-capstone/)
+- **Directory:** [`session21-devops-capstone/`](session21-devops-capstone/)
 - **Project Directory:** `final-devops-project/`
-- **CloudPulse Platform:** Live incident response and SRE operations platform at `http://localhost:3000`.
+- **CloudPulse Platform:** Live incident response and SRE operations platform running at `http://localhost:3000`.
 - **Integrated Architecture:** Complete DevSecOps pipeline, enterprise Helm chart with HPA autoscaling, Prometheus observability, and ArgoCD continuous reconciliation.
 - **Evidence:** `screenshots/55_final_devsecops_pipeline.png` through `58_final_gitops_troubleshooting.png`
 - **Documentation:** [README in session21-devops-capstone](session21-devops-capstone/README.md)
 
 ---
 
-### [`session5-git-github/`](session5-git-github/) - Git Homework Assignment
+### [Foundational: Git Homework Tasks](session5-git-github/)
+- **Directory:** [`session5-git-github/`](session5-git-github/)
 - **Task 1:** `git commit -a -m` vs `git commit -m` testing & comparison.
 - **Task 2:** Git cherry-pick walkthrough from feature branch into `main`.
 - **Evidence:** `screenshots/01_task1_commit_comparison.png` through `04_task2_cherry_pick_and_verification.png`
