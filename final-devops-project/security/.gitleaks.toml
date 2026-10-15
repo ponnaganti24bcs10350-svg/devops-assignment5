@@ -1,0 +1,8 @@
+# Gitleaks Configuration for Final DevOps Platform
+title = "Enterprise Gitleaks Rules"
+
+[allowlist]
+description = "Allowed mock hashes for testing"
+paths = [
+  '''application/tests/''',
+]

@@ -1,6 +1,8 @@
-# Docker Homework Tasks: Hello World Applications
+# Session 06: Docker Hello World Applications
 
 **Name:** Srividya Ponnaganti  
+**Enrollment Number:** 24BCS10350  
+**GitHub Repository:** https://github.com/ponnaganti24bcs10350-svg/devops-assignment5  
 
 ---
 

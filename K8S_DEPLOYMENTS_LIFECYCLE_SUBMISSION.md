@@ -1,4 +1,4 @@
-# Kubernetes Deployment Strategies & Pod Lifecycle
+# Session 10: Kubernetes Pods, ReplicaSets & Deployments Submission
 
 **Name:** Srividya Ponnaganti  
 **Enrollment Number:** 24BCS10350  

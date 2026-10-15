@@ -1,4 +1,4 @@
-# Kubernetes Fundamentals & Minikube Hands-on
+# Session 09: Kubernetes Fundamentals & Minikube Hands-on
 
 **Name:** Srividya Ponnaganti  
 **Enrollment Number:** 24BCS10350  

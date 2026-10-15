@@ -1,0 +1,19 @@
+{
+  "name": "final-devops-enterprise-app",
+  "version": "1.0.0",
+  "description": "Enterprise Cloud-Native Microservice for DevOps Capstone Project",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --coverage --detectOpenHandles --forceExit"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "prom-client": "^15.1.2",
+    "winston": "^3.13.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  }
+}

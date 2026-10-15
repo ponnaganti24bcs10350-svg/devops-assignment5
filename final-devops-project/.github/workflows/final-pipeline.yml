@@ -1,0 +1,107 @@
+name: Final End-to-End DevOps & DevSecOps Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # Job 1: Build & Unit Tests
+  build-and-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: final-devops-project/application/package.json
+
+      - name: Install Dependencies
+        run: |
+          cd final-devops-project/application
+          npm ci
+
+      - name: Run Unit & Integration Tests
+        run: |
+          cd final-devops-project/application
+          npm test
+
+  # Job 2: Multi-Tier Security Audits (DevSecOps)
+  security-audits:
+    name: DevSecOps Scans (SAST, SCA, Secrets)
+    needs: build-and-test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Secret Scanning (Gitleaks)
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: SAST Code Analysis (Semgrep)
+        uses: returntocorp/semgrep-action@v1
+        with:
+          config: p/default
+
+      - name: Dependency SCA Vulnerability Scan
+        run: |
+          cd final-devops-project/application
+          npm audit --audit-level=high || true
+
+  # Job 3: Container Build & Image Security Scanning
+  docker-build-and-scan:
+    name: Docker Build & Vulnerability Scan
+    needs: security-audits
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build Local Container Image
+        uses: docker/build-push-action@v5
+        with:
+          context: ./final-devops-project
+          file: ./final-devops-project/docker/Dockerfile
+          push: false
+          tags: final-devops-app:${{ github.sha }}
+          load: true
+
+      - name: Scan Image for Vulnerabilities (Trivy)
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'final-devops-app:${{ github.sha }}'
+          format: 'table'
+          exit-code: '0'
+          severity: 'CRITICAL,HIGH'
+
+  # Job 4: Deploy via GitOps / Helm
+  deploy-production:
+    name: GitOps Deployment & Smoke Test
+    needs: docker-build-and-scan
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Verify Helm Templates
+        run: |
+          helm lint final-devops-project/helm
+          helm template final-devops-project/helm
+
+      - name: Sync GitOps Manifests
+        run: |
+          echo "ArgoCD automatically detects commit ${{ github.sha }} and reconciles state."

@@ -1,4 +1,4 @@
-# Docker Multi-Stage Build Homework
+# Session 07: Docker Multi-Stage Build Homework
 
 **Name:** Srividya Ponnaganti  
 **Enrollment Number:** 24BCS10350  

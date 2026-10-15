@@ -1,0 +1,54 @@
+# Default values for final-devops-chart
+replicaCount: 3
+
+image:
+  repository: node
+  tag: "20-alpine"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8080
+
+ingress:
+  enabled: true
+  className: "nginx"
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  hosts:
+    - host: devops-final.local
+      paths:
+        - path: /
+          pathType: Prefix
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 70
+
+env:
+  APP_NAME: "Final-DevOps-Enterprise-Platform"
+  NODE_ENV: "production"
+  PORT: "8080"
+
+probes:
+  liveness:
+    path: /healthz
+    port: 8080
+    initialDelaySeconds: 5
+    periodSeconds: 10
+  readiness:
+    path: /ready
+    port: 8080
+    initialDelaySeconds: 3
+    periodSeconds: 5

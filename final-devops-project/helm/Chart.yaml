@@ -1,0 +1,9 @@
+apiVersion: v2
+name: final-devops-chart
+description: A Production Enterprise Helm Chart for DevOps Capstone Platform
+type: application
+version: 1.0.0
+appVersion: "2.0.0"
+maintainers:
+  - name: Srividya Ponnaganti
+    email: srividya@example.com

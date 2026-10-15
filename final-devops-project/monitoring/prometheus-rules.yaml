@@ -1,0 +1,23 @@
+apiVersion: monitoring.coreos.com/v1
+kind: PrometheusRule
+metadata:
+  name: final-devops-alerts
+  namespace: final-devops-prod
+spec:
+  groups:
+    - name: enterprise_slo_alerts
+      rules:
+        - alert: ServiceLatencyHigh
+          expr: histogram_quantile(0.95, sum(rate(http_request_duration_seconds_bucket[5m])) by (le)) > 0.5
+          for: 2m
+          labels:
+            severity: critical
+          annotations:
+            summary: "P95 latency exceeded 500ms"
+        - alert: PodCrashLooping
+          expr: rate(kube_pod_container_status_restarts_total[5m]) * 60 > 2
+          for: 1m
+          labels:
+            severity: warning
+          annotations:
+            summary: "Container is restarting frequently"
